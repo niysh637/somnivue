@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 
-type Variant = "dark" | "light" | "bg-invisible";
+export type Variant = "dark" | "light" | "bg-invisible";
 
 type ButtonProps = {
     variant?: Variant,

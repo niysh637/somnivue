@@ -1,5 +1,7 @@
 import { Button } from "../components/Button";
 import { Header } from "../components/Header";
+import { LoginButton } from "../components/LoginButton";
+import { LogoutButton } from "../components/LogoutButton";
 
 
 export function LandingPage() {
@@ -22,8 +24,10 @@ function TintedPanel() {
                     <span className="text-lg text-neutral-700 pl-1">SomniVue tracks your snoring to help you achieve the sleep of your dreams (get it??).</span>
                 </div>
                 <div className="flex gap-3 w-1/3 pt-7 pl-5">
-                    <Button variant="dark" className="w-34">Get Started</Button>
-                    <Button variant="light" className="w-32 border-1 border-neutral-700">Log in</Button>
+                    <LoginButton variant="Get Started">Get Started</LoginButton>
+                    <LoginButton variant="Login-border">Log In</LoginButton>
+                    {/* <Button variant="dark" className="w-34">Get Started</Button>
+                    <Button variant="light" className="w-32 border-1 border-neutral-700">Log in</Button> */}
                 </div>
             </div>
         </div>

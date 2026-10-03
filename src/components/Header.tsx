@@ -1,5 +1,6 @@
 import somniIcon from '../assets/somni_icon.png';
-import { Button } from './Button';
+// import { Button } from './Button';
+import { LoginButton } from './LoginButton';
 
 
 type HeaderProps = {
@@ -21,8 +22,10 @@ function getHeaderHTML(loggedIn:boolean) {
                     <span className="text-4xl font-bold text-neutral-700">SomniVue</span>
                 </div>
                 <div className="flex gap-4">
-                    <Button variant='light' className='w-24'>Login</Button>
-                    <Button variant='dark' className='w-24'>Register</Button>
+                    <LoginButton variant="Login-noBorder">Login</LoginButton>
+                    <LoginButton variant="Register">Register</LoginButton>
+                    {/*<Button variant='light' className='w-24'>Login</Button>
+                    <Button variant='dark' className='w-24'>Register</Button>*/}
                 </div>
             </div>
         );

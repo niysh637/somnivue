@@ -1,22 +1,20 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import somniIcon from '../assets/somni_icon.png';
-// import { Button } from './Button';
 import { LoginButton } from './LoginButton';
+import { LogoutButton } from './LogoutButton';
 
 
-type HeaderProps = {
-    loggedIn: boolean;
-};
-
-export function Header({ loggedIn }:HeaderProps) {
+export function Header() {
+    const { isAuthenticated } = useAuth0();
     return (
-        getHeaderHTML(loggedIn)
+        getHeaderHTML(isAuthenticated)
     );
 }
 
-function getHeaderHTML(loggedIn:boolean) {
-    if (!loggedIn) {
+function getHeaderHTML(isAuthenticated:boolean) {
+    if (!isAuthenticated) {
         return (
-            <div className="flex justify-between px-2 py-3 pl-12">
+            <div className="flex justify-between px-2 pb-4 py-3 pl-12">
                 <div className="flex gap-8">
                     <img src={somniIcon} width="40" height="35" />
                     <span className="text-4xl font-bold text-neutral-700">SomniVue</span>
@@ -24,12 +22,20 @@ function getHeaderHTML(loggedIn:boolean) {
                 <div className="flex gap-4">
                     <LoginButton variant="Login-noBorder">Login</LoginButton>
                     <LoginButton variant="Register">Register</LoginButton>
-                    {/*<Button variant='light' className='w-24'>Login</Button>
-                    <Button variant='dark' className='w-24'>Register</Button>*/}
                 </div>
             </div>
         );
     } else {
-        return null;
+        return (
+            <div className="flex bg-neutral-200 justify-between px-2 pb-4 py-3 pl-12 border-b border-neutral-300">
+                <div className="flex gap-8">
+                    <img src={somniIcon} width="40" height="35" />
+                    <span className="text-4xl font-bold text-neutral-700">SomniVue</span>
+                </div>
+                <div className="flex gap-4">
+                    <LogoutButton />
+                </div>
+            </div>
+        );
     }
 }

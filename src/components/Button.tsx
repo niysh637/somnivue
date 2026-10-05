@@ -22,7 +22,7 @@ function getVariantStyles(variant: Variant) {
         case "light":
             return "bg-white text-neutral-700 hover:bg-neutral-700 hover:text-neutral-200";
         case "bg-invisible":
-            return "bg-zinc-100 hover:bg-neutral-700 text-neutral-700 hover:text-neutral-100";
+            return "bg-zinc-200 hover:bg-neutral-700 text-neutral-700 hover:text-neutral-100";
         default:
             throw new Error(`Invalid variant: ${variant satisfies never}`);
     }

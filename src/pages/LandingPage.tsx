@@ -1,15 +1,24 @@
+// import { Button } from "../components/Button";
 import { Button } from "../components/Button";
 import { Header } from "../components/Header";
 import { LoginButton } from "../components/LoginButton";
-import { LogoutButton } from "../components/LogoutButton";
+import { useNavigate } from "react-router-dom";
 
 
 export function LandingPage() {
+    const navigate = useNavigate();
+
     return (
         <div>
-            <Header loggedIn={false} />
+            <Header />
             <TintedPanel />
             <TripleColText />
+            <Button
+            variant="dark"
+            className="w-34"
+            onClick={() => navigate("/record")}>
+                Get Started
+            </Button>
         </div>
       );
 }
